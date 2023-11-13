@@ -1,5 +1,5 @@
 import { divide } from "cypress/types/lodash";
-import React from "react";
+import React, {useState} from "react";
 
 const Tabs = (tabProp) =>{
     const [tab,setTab] = useState(tabProp[0].content);

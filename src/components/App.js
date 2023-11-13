@@ -18,7 +18,7 @@ const tabs =[
 const App = () => {
   
   return (
-    <div>
+    <div id="root">
         <Tabs tabProp={tabs}/>
     </div>
   )
