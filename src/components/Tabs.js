@@ -7,7 +7,7 @@ const Tabs = (tabProp) =>{
         <div>
             <ul>
               {  tabProp.map((e) => (
-                <li onClick={setTab(e.content)}>{e.title}</li>
+                <li onClick={()=>setTab(e.content)}>{e.title}</li>
                 ))}
             </ul>
             <p>{tab}</p>
