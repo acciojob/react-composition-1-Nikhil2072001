@@ -19,7 +19,7 @@ const App = () => {
   
   return (
     <div id="root">
-        <Tabs props={tabs}/>
+        <Tabs tabs={tabs}/>
     </div>
   )
 }
