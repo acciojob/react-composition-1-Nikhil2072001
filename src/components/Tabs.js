@@ -1,17 +1,24 @@
-import { divide } from "cypress/types/lodash";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-const Tabs = (tabProp) =>{
-    const [tab,setTab] = useState(tabProp[0].content);
-    return (
-        <div>
-            <ul>
-              {  tabProp.map((e) => (
-                <li onClick={()=>setTab(e.content)}>{e.title}</li>
-                ))}
-            </ul>
-            <p>{tab}</p>
-        </div>
-    )
+function Tabs(props) {
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
+
+  const handleTabClick = (index) => {
+    setActiveTabIndex(index);
+  };
+
+  return (
+    <div>
+      <ul>
+        {props.tabs.map((tab, index) => (
+          <li key={index} onClick={() => handleTabClick(index)}>
+            {tab.title}
+          </li>
+        ))}
+      </ul>
+      <div>{props.tabs[activeTabIndex].content}</div>
+    </div>
+  );
 }
-export default Tabs
+
+export default Tabs;
